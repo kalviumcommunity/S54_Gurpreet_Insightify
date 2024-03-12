@@ -14,6 +14,15 @@ The capstone project entails the development of a sophisticated web-based survey
 - *Response Analytics:* The platform will offer visualizations and analytics tools to help users interpret survey results effectively. This includes graphs, charts, and statistical summaries.
 - *Percentage Calculation:* Users will receive a percentage breakdown of responses for each question, facilitating easy interpretation of data.
 
+## Tech Stack
+
+This project is based on MERN Stack
+
+- *Frontend:* React.js
+- *Backend:* Node.js, Express.js
+- *Database:* MongoDB
+- *Deployment:* Vercel (Frontend & Backend)
+
 ## Running the Project Locally
 
 Experience the power of Talent Forge firsthand by running the project locally:
