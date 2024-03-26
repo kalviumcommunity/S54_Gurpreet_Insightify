@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 require('dotenv').config()
 const port = process.env.PORT
 const cors = require('cors')
-const { Router } = require('./route/route.js')
+const { Router , userRouter } = require('./route/route.js')
 const User = require('./models/user.js')
 
 app.use(express.json())
@@ -72,7 +72,7 @@ const users = [
         password: "emily789"
     })
 ]
-User.insertMany(users)
+// User.insertMany(users)
 
 
 app.get('/',(req,res)=>{
@@ -80,6 +80,8 @@ app.get('/',(req,res)=>{
 })
 
 app.use('/route',Router)
+
+app.use('/user', userRouter)
 
 app.listen(port, ()=>{
     console.log(`app is listening at ${port}`)
