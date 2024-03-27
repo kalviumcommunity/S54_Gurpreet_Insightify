@@ -12,12 +12,15 @@ Router.get("/", (req, res) => {
   res.send("Route is working");
 });
 
-userRouter.get('/', async (req,res)=>{
-  await User.find().then((data) => {
-    returnData = data;
-  });
-  res.send(returnData);
-})
+userRouter.get('/', async (req, res) => {
+  try {
+    const data = await User.find();
+    res.send(data);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Internal Server Error");
+  }
+});
 userRouter.post('/',(req,res)=>{
   res.send("User post is working")
 })
