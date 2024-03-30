@@ -21,8 +21,10 @@ userRouter.get('/', async (req, res) => {
     res.status(500).send("Internal Server Error");
   }
 });
-userRouter.post('/',(req,res)=>{
-  res.send("User post is working")
+userRouter.post('/login',(req,res)=>{
+  const newUser = new User(req.body)
+  newUser.save()
+  res.send("User created successfully")
 })
 userRouter.delete('/',(req,res)=>{
   res.send("User delete is working")
