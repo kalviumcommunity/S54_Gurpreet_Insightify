@@ -32,13 +32,16 @@ userRouter.post('/login',async (req,res)=>{
   }
 })
 userRouter.delete('/', async(req,res)=>{
-  const User = await User.findOneAndDelete(req.body)
-  try{
-    await User.deleteOne()
-    res.send("User deleted successfully")
-  }catch(error){
-    console.log(error)
-    res.status(500).send("Internal Server Error")
+  try {
+    const user = await User.findOneAndDelete(req.body);
+    if (user) {
+      res.send("User deleted successfully");
+    } else {
+      res.status(404).send("User not found");
+    }
+  } catch(error) {
+    console.log(error);
+    res.status(500).send("Internal Server Error");
   }
 })
 
