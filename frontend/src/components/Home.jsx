@@ -19,7 +19,7 @@ const Home = () => {
             free.
           </div>
           <div className="create">
-            <button id="create-btn">Create Now</button>
+            <button id="create-btn">Get Started</button>
           </div>
         </div>
         <div className="right">
