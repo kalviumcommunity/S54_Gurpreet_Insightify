@@ -48,4 +48,6 @@ Experience the power of Talent Forge firsthand by running the project locally:
 
 Have questions or suggestions? We're here to help! Reach out to us at [gps2005.singh@gmail.com](mailto:gps2005.singh@gmail.com) and embark on your journey with Insightify today.
 
-# BackEnd Server Link :- https://s54-gurpreet-capstone-insightify.vercel.app/
+### BackEnd Server Link :- https://s54-gurpreet-capstone-insightify.vercel.app/
+
+### FrontEnd Link :- https://insightify-sable.vercel.app/
