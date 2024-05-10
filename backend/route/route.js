@@ -22,10 +22,23 @@ userRouter.get('/', async (req, res) => {
   }
 });
 userRouter.post('/login',async (req,res)=>{
-  const newUser = await new User(req.body)
   try{
-    await newUser.save()
-    res.send("User created successfully")
+    const {userId,email,userName} = req.body
+    let user = await User.findOne({userId})
+    if (!user){
+      user = new User({
+        email : email,
+        userName : userName,
+        userId : userId
+      })
+      await user.save()
+      res.status(201).send("User created sucessfully")
+    }else{
+      res.send("user already exist")
+    }
+
+    
+    
   }catch(error){
     console.log(error)
     res.status(500).send("Internal Server Error")
