@@ -1,6 +1,7 @@
 const express = require('express');
 const multer = require('multer');
 const surveyRouter = express.Router();
+const User = require('../models/user');
 const Survey = require('../models/survey'); 
 const mongoose = require('mongoose');
 
@@ -29,6 +30,9 @@ const upload = multer({ storage: storage, fileFilter: fileFilter });
 surveyRouter.post('/create',upload.array('images'), async (req, res) => {
     const { title, creator, questions } = req.body;
     // console.log(title, creator, questions)
+    if (!questions || !Array.isArray(questions) || questions.length === 0) {
+        return res.status(400).send({ message: 'Questions are required in the request body' });
+    }
 
     const userExists = await User.exists({ _id: creator });
     if (!userExists) {
