@@ -1,0 +1,15 @@
+.header{
+    width: 100vw;
+    padding: 2vmax 3.5vmax ;
+    justify-content: space-between;
+}
+.site-name{
+    margin-left: 5px;
+  font-size: 2.3vmax;
+  font-weight: 650;
+}
+.welcome{
+  font-size: 2vmax;
+  font-weight: 650;
+  padding-right: 1vmax;
+}

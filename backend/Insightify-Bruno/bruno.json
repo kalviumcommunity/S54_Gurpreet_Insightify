@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Insightify-Bruno",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}
