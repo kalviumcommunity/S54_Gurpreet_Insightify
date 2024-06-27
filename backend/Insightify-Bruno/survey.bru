@@ -1,0 +1,24 @@
+meta {
+  name: survey
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:6969/survey/create
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "title": "Survey",
+      "creator": "663e070673303d18851b86d4",
+      "questions": [
+          {
+              "questionText": "What game do you play",
+              "answerType": "TextBox"
+          }
+      ]
+  }
+}

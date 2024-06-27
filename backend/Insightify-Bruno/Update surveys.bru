@@ -1,0 +1,24 @@
+meta {
+  name: Update surveys
+  type: http
+  seq: 4
+}
+
+put {
+  url: http://localhost:6969/survey/update/667d4c8a3751a1320204d8e4
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "title": "Survey",
+      "creator": "663e070673303d18851b86d4",
+      "questions": [
+          {
+              "questionText": "What is ypur name?",
+              "answerType": "TextBox"
+          }
+      ]
+  }
+}

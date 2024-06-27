@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 import Logo from "../assets/Insightify.png"
 import Clerk from "./Clerk";
+import BasicUsage from "./BasicUsage";
 
 const Navbar = () => {
 
@@ -21,6 +22,7 @@ const Navbar = () => {
         <Link to="/about">About</Link>
         <Link to="/testimonials">Testimonials</Link>
         <Clerk />
+        
       </div>
     </div>
   );
