@@ -7,8 +7,14 @@
     "node": "20.x"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "start": "react-scripts start",
+  "build": "react-scripts build",
+  "test": "jest",
+  "eject": "react-scripts eject"
+},
+"jest": {
+  "testEnvironment": "node"
+},
   "keywords": [
     "backend",
     "server"
@@ -24,5 +30,9 @@
     "mongoose": "^8.2.3",
     "multer": "^1.4.5-lts.1",
     "nodemon": "^3.1.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
   }
 }
