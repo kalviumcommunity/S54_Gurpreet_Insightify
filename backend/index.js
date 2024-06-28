@@ -9,6 +9,7 @@ const { Router , userRouter } = require('./route/route.js')
 const { surveyRouter } = require('./route/surveyRoutes.js')
 const { responseRouter } = require('./route/responseRoutes.js')
 const User = require('./models/user.js')
+const Faq = require('./models/faqs');
 
 app.use(express.json())
 app.use(bodyParser.json())
@@ -38,7 +39,7 @@ app.get('/faq', async (req, res) => {
     }
   });
 
-  const Faq = require('./models/faqs');
+
 
 app.use('/route',Router)
 
