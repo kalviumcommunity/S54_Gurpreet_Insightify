@@ -9,6 +9,7 @@ const { Router , userRouter } = require('./route/route.js')
 const { surveyRouter } = require('./route/surveyRoutes.js')
 const { responseRouter } = require('./route/responseRoutes.js')
 const User = require('./models/user.js')
+const Faq = require('./models/faqs');
 
 app.use(express.json())
 app.use(bodyParser.json())
@@ -27,6 +28,18 @@ async function main() {
 app.get('/',(req,res)=>{
     res.send('server is running')
 })
+
+app.get('/faq', async (req, res) => {
+    try {
+      const faqs = await Faq.find();
+      res.send(faqs);
+    } catch (err) {
+      console.error("Error fetching FAQs: ", err);
+      res.status(500).json({ message: "Internal Server Error" });
+    }
+  });
+
+
 
 app.use('/route',Router)
 
