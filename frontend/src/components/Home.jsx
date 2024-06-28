@@ -2,7 +2,9 @@ import React from "react";
 import "./Home.css";
 import Navbar from "./Navbar";
 import FAQ from "./FAQ";
+import Testimonials from "./Testimonials";
 import Footer from "./Footer";
+
 
 
 
@@ -22,7 +24,10 @@ const Home = () => {
       <div className="FAQS">
         <FAQ />
       </div>
-      <div>
+      <div className="testimonials">
+        <Testimonials />
+      </div>
+      <div className="footer>
         <Footer />
       </div>
     </div>
