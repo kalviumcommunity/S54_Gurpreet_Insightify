@@ -2,6 +2,7 @@ import React from "react";
 import "./Home.css";
 import Navbar from "./Navbar";
 import FAQ from "./FAQ";
+import Testimonials from "./Testimonials";
 
 
 
@@ -20,6 +21,9 @@ const Home = () => {
       </div>
       <div className="FAQS">
         <FAQ />
+      </div>
+      <div className="testimonials">
+        <Testimonials />
       </div>
     </div>
   );
