@@ -9,7 +9,12 @@ const surveySchema = new mongoose.Schema({
     },
     title: {  
         type: String,
-        // required: true
+        required: true
+    },
+    status: {
+        type: String,
+        enum: ['Active', 'Inactive'],
+        default: 'Active'
     },
     questions: [{
         questionText: {
@@ -18,11 +23,11 @@ const surveySchema = new mongoose.Schema({
         },
         answerType: {
             type: String,
-            enum: ['MCQ', 'TextBox', 'Rating', 'Date', 'PhoneNumber', 'ImageUpload'],
+            enum: ['MCQ', 'TextBox', 'Rating', 'Date', 'PhoneNumber', 'File','Email','Name'],
             required: true
         },
         options: [{
-            type: String // Used for MCQs
+            type: [String] // Used for MCQs
         }],
         maxRating: {
             type: Number, // Used for Rating type questions
@@ -32,7 +37,7 @@ const surveySchema = new mongoose.Schema({
             type: [String], 
             default: ['image/jpeg', 'image/png'] 
         },
-        imageUrl: {
+        fileUrl: {
             type: String // URL to the uploaded image
         }
     }]

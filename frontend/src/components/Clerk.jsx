@@ -16,7 +16,6 @@ const Clerk = () => {
       if (!clerkUser) return;
 
       try {
-        // console.log(clerkUser);
         const userName = clerkUser.fullName ?? clerkUser.username;
         const userEmail = clerkUser.emailAddresses[0]?.emailAddress;
         const userdata = {
@@ -24,20 +23,34 @@ const Clerk = () => {
           userName: userName,
           email: userEmail,
         };
-        console.log(userdata);
-        navigate("/dashboard")
-        setUser(userdata);  
-        await axios.post("http://localhost:6969/user/login", userdata);
+        console.log("User data before login:", userdata);
+
+        const response = await axios.post("http://localhost:6969/user/login", userdata);
+        console.log("Response from login:", response.data);
+        const { mongoUserId, token } = response.data;
+
+        const updatedUserdata = {
+          ...userdata,
+          userId: mongoUserId, // Update userId with MongoDB _id
+        };
+
+        // Store the token in localStorage
+        localStorage.setItem('token', token);
+
+        console.log("Updated user data:", updatedUserdata);
+        navigate("/dashboard");
+        setUser(updatedUserdata);
       } catch (error) {
         console.log("Please sign in or check your network connection.");
       }
     };
 
     signIn();
-  }, [clerkUser,setUser]);
+  }, [clerkUser, setUser]);
 
   const handleSignOut = () => {
-    setUser(null);  
+    setUser(null);
+    localStorage.removeItem('token'); // Remove the token from localStorage on sign out
   };
 
   console.log(clerkUser);
@@ -52,7 +65,6 @@ const Clerk = () => {
         <SignedIn>
           <UserButton afterSignOutUrl='/' onSignOut={handleSignOut} />
         </SignedIn>
-        
       </>
     </div>
   );

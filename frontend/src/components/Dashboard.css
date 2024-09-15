@@ -1,3 +1,7 @@
+.dash-parent{
+  flex-direction: column;
+  overflow-x: hidden;
+}
 .header{
     width: 100vw;
     padding: 2vmax 3.5vmax ;
@@ -12,4 +16,114 @@
   font-size: 2vmax;
   font-weight: 650;
   padding-right: 1vmax;
+}
+.dash{
+  font-size: 4vmax;
+  font-weight: 650;
+  color: #32386C;
+}
+.dash-heading{
+  width: 100vw;
+  justify-content: space-between;
+  padding: 1vmax 5vmax;
+}
+.create-btn>button{
+  width:10vmax;
+  color:white;
+  font-size:1.6vmax;
+  background-color:black;
+  font-weight: 600;
+  padding: 0.6vmax 0.2vmax;
+  outline:none;
+  border-radius:5px;
+  border:none;
+  cursor: pointer;
+}
+.survey-list{
+  width: 90vw;
+  border: 1px solid rgba(14, 14, 14, 0.299);
+  border-radius: 5px;
+  box-shadow: 0px 0px 1.5px 0px rgba(0,0,0,0.75);
+  margin-bottom: 2vmax;
+}
+.dashboard{
+  flex-direction: column;
+}
+.survey-name{
+  width: 20vmax;
+  
+}
+.survey-list{
+  padding: 1vmax 2vmax;
+  flex-direction: column;
+  align-items: start;
+}
+.sur{
+  font-size: 2.4vmax;
+  font-weight: 650;
+}
+.sur-text{
+  color: rgb(151, 149, 149);
+  font-size: 1.5vmax;
+}
+.list{
+  width: 85vw;
+  height: auto;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0.5vmax 0;
+}
+.survey-name{
+  font-size: 1.5vmax;
+}
+.survey-list-right{
+  width: 35vw;
+  justify-content: space-around;
+}
+.create-survey-text{
+  font-size: 2vmax;
+}
+.modal-parent{
+  flex-direction: column;
+}
+button{
+  font-size: 1.2vmax;
+}
+.head{
+  width: 85vw;
+  padding: 1vmax 2vmax;
+  justify-content: space-between;
+  font-size: 1.5vmax;
+  font-weight: 650;
+}
+.title{
+  width: 16vmax;
+}
+.head-right{
+  width: 31vw;
+  justify-content: space-between;
+}
+.del{
+  position: relative;
+  left: 1vmax;
+}
+.delete>button{
+  width:7vmax;
+  color:white;
+  background-color:rgb(253, 3, 3);
+  padding: 0.3vmax;
+  outline:none;
+  border-radius:5px;
+  border:none;
+  cursor: pointer;
+}
+.update>button{
+  width:7vmax;
+  color:white;
+  background-color:rgb(0, 0, 0);
+  padding: 0.3vmax;
+  outline:none;
+  border-radius:5px;
+  border:none;
+  cursor: pointer;
 }
